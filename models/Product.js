@@ -2,6 +2,7 @@
 const { Model, DataTypes, DECIMAL } = require('sequelize');
 // import our database connection from config.js
 const sequelize = require('../config/connection');
+const { INTEGER } = require('sequelize');
 
 // Initialize Product model (table) by extending off Sequelize's Model class
 class Product extends Model {}
@@ -32,7 +33,7 @@ Product.init(
       allowNull: false,
       defaultValue: 10,
       validate: {
-        value: NUMERIC,
+        value: INTEGER,
       },
     },
     category_id: {
